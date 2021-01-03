@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: connect-cloud-config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/full-stack-org/micro-services-connect-eureka-zuul-config-server/tree/main/connect-config-git-repo
+          #skip-ssl-validation: true
+          #clone-on-start: true
+    
+server:
+  port: 8888
+  
+  

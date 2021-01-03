@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: connect-producer-service
+
+server:  port: 8081
