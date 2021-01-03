@@ -1,0 +1,41 @@
+spring:
+  application:
+    name: connect-zuul-api-gateway
+
+server:
+  port: 8765
+
+feign:  hystrix:    enabled: true
+
+#zuul:
+#  routes:
+#    connect-user-details-service:
+#     path: /user/v1/**
+#     service-id: connect-user-details-service
+#    connect-producer-service:
+#     path: /provider/name/v1/**
+#     service-id: connect-producer-service
+#    connect-consumer-service:
+#     path: /consumer/name/v1/**
+#     service-id: connect-consumer-service
+#    connect-common-jwt-service:
+#     path: /jwt/user/v1/**
+#     service-id: connect-common-jwt-service
+     
+hystrix:
+  command:
+    connect-user-details-service:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 9000
+    connect-producer-service:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 9000
+    connect-consumer-service:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 9000
